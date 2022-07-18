@@ -1,0 +1,17 @@
+.row-content{
+    margin-right: 0;
+    display: block;
+    padding-top: 5%;
+}
+.row p{
+    color: rgb(98, 95, 95);
+}
+.category{
+    width: 23rem;
+    margin:2%;
+    padding: 0;
+    transition: transform 0.5s;
+}
+.category:hover{
+    transform: scale(1.1);
+}

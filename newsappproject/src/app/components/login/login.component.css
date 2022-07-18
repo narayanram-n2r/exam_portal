@@ -1,0 +1,31 @@
+h2,h6{
+    text-align: center;
+}
+.container{
+    padding-top: 10%;
+    width: 30%;
+}
+a{
+    text-decoration: none;
+    color: #818181;
+}
+a:hover {
+    color: #369af8;
+}
+.background{
+    width: 100vw;
+    height: fit-content;
+    padding-bottom: 8%;
+    background-image: url("https://www.popoptiq.com/wp-content/uploads/2018/08/articles-lead-image-082418-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 480px) {
+    .contain-body {
+        top: 50%; /* IMPORTANT */
+        left: 50%; /* IMPORTANT */
+        display: block;
+        position: absolute;
+    }
+}

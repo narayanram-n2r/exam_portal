@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row row-content input">bhrnjkmtl,hdy</div>
+    <div class="row row-top">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+          <form class="example-form" (ngSubmit)="search(searchId.value)">
+            <div class="input-group">
+                <div class="form-outline">
+                  <input type="text" #searchId class="form-control" name="search" placeholder="Search" size="60"/>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="search(searchId.value)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class="row row-top align-items-center row-content">
+      <div class="warning">
+        <h1>{{categoryName}}</h1>
+      </div>
+        <div *ngIf="newsArticles.length>0">
+          <div class="card mb-4" *ngFor="let news of newsArticles; let ind = index">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  [src]="news?.urlToImage"
+                  class="img-fluid rounded-start"
+                  alt="Article Image"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h1 class="card-title">{{ news?.title }}</h1>
+                  <p class="card-text">Author: {{ news?.author }}</p>
+                  <p class="card-text">
+                    <small class="text-muted">{{ news?.publishedAt}}</small>
+                  </p>
+                  <a href="{{news?.url}}" target="_blank">
+                    <button class="btn btn-primary button">
+                    ReadMore
+                    </button>
+                  </a>
+                  <button class="btn btn-danger" (click)="addToFavourite(news)">
+                    Favourite
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="newsArticles.length<1" class="result">
+          <h1>Not results found</h1>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row row-top align-items-center row-content">
+    <div class="card mb-4" *ngFor="let news of newsArticles; let ind = index">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            [src]="news?.urlToImage"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">{{ news?.title }}</h1>
+            <p class="card-text">Author: {{ news?.author }}</p>
+            <p class="card-text">
+              <small class="text-muted">{{ news?.publishedAt}}</small>
+            </p>
+            <a href="{{news?.url}}" target="_blank">
+              <button class="btn btn-primary button">
+              ReadMore
+              </button>
+            </a>
+            <button class="btn btn-danger" (click)="deleteFromFavourite(news)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

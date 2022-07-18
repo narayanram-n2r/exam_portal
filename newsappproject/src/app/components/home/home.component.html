@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="container-bar" routerLink="/">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/21/21601.png"
+      alt=""
+    />
+  </div>
+  <div class="action_links">
+    <ul class="nav">
+      <!-- <li class="nav-item" [routerLinkActive]="['active']"><a  routerLink="/" *ngIf="!loggedIn">Home</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/about" *ngIf="!loggedIn">About Us</a></li> -->
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/articles">All News</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/category">Categories</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/search">Search</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/login" *ngIf="!loggedIn">Login</a></li>
+      <!-- <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/contact" *ngIf="!loggedIn">Contact Us</a></li> -->
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/favourite" *ngIf="loggedIn">Favourites</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/edit" *ngIf="loggedIn">Profile</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a routerLink="/login" *ngIf="loggedIn" (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="action_links"></div>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

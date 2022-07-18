@@ -1,0 +1,153 @@
+<div class="background">
+  <div class="container">
+    <div class="contain-body">
+      <div class="card">
+        <div class="card-body">
+          <h2>Register Yourself</h2>
+          <form
+            class="example-form"
+            [formGroup]="signupForm"
+            (ngSubmit)="signup()"
+          >
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                #firstName
+                formControlName="firstName"
+              />
+            </div>
+            <div
+              *ngIf="
+                signupForm.controls['firstName'].invalid &&
+                signupForm.controls['firstName'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              First Name is Invalid
+            </div>
+            
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                #lastName
+                formControlName="lastName"
+              />
+            </div>
+            <div
+              *ngIf="
+                signupForm.controls['lastName'].invalid &&
+                signupForm.controls['lastName'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              Last Name is Invalid
+            </div>
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input
+                type="text"
+                class="form-control"
+                #city
+                formControlName="city"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Contact Number</label>
+              <input
+                type="tel"
+                pattern="\d*"
+                class="form-control"
+                #contactNumber
+                formControlName="mobile"
+              />
+            </div> 
+            <div
+              *ngIf="
+                signupForm.controls['mobile'].invalid &&
+                signupForm.controls['mobile'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              Mobile Number is Invalid
+            </div>        
+            <div class="mb-3">
+              <label for="emial" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                #email
+                formControlName="email"
+              />
+            </div>
+            <div
+              *ngIf="
+                signupForm.controls['email'].invalid &&
+                signupForm.controls['email'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              Email is Invalid
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                #password
+                formControlName="password"
+              />
+            </div>
+            <div
+              *ngIf="
+                signupForm.controls['password'].invalid &&
+                signupForm.controls['password'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              Password is Invalid
+            </div>
+            <!-- <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                #confirmPassword
+                formControlName="confirmPassword"
+              />
+            </div>
+            <div
+              *ngIf="
+                signupForm.controls['password'].invalid &&
+                signupForm.controls['password'].touched
+              "
+              class="alert alert-danger"
+              role="alert"
+            >
+              Confirm Password is required
+            </div> -->
+            <a routerLink="/login">Already registered? Click to login</a>
+            <br /><br />
+            <button
+              class="btn btn-primary"
+              type="submit"
+              [disabled]="signupForm.invalid"
+            >
+              Sign Up
+            </button>
+            <br /><br />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

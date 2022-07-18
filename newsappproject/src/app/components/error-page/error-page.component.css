@@ -1,0 +1,12 @@
+.container{
+    padding-top: 10%;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+svg{
+    margin-bottom: 3%;
+}
+h1{
+    font: 400 50px Roboto, "Helvetica Neue", sans-serif
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row row-top align-items-center row-content">
+    <mat-chip-list aria-label="Category selection" >
+      <mat-chip *ngFor="let cat of categoryNews; let ind = index" (click)="changeCategory(ind)">
+        {{cat.cat}}
+      </mat-chip>
+    </mat-chip-list>
+    <div class="warning">
+      <h1>{{categoryName}}</h1>
+    </div>
+      <div class="card" style="width: 23rem;" *ngFor="let news of newsArticles; let ind = index">
+        <img [src]="news?.urlToImage" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ news?.title }}</h5>
+          <p class="card-text">Author: {{ news?.author }}</p>
+          <a href="{{news?.url}}" target="_blank" class="btn btn-primary button">
+            ReadMore
+          </a>
+          <a class="btn btn-danger" (click)="addToFavourite(news)">
+            Favourite
+          </a>
+      </div>
+    </div>
+    </div>
+</div>
